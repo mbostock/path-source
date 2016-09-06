@@ -17,7 +17,7 @@ read(path("example.txt"))
   .catch((error) => console.error(error.stack));
 ```
 
-Similarly, to fetch a resources in 64-byte chunks in a browser (requires [array-source](https://github.com/mbostock/array-source) and [slice-source](https://github.com/mbostock/slice-source)):
+Similarly, to fetch a resource in 64-byte chunks in a browser (requires [array-source](https://github.com/mbostock/array-source) and [slice-source](https://github.com/mbostock/slice-source)):
 
 ```html
 <!DOCTYPE html>
