@@ -1,0 +1,36 @@
+{
+  "name": "path-source",
+  "version": "0.0.0",
+  "description": "Read files in Node, or fetch URLs in browser, as standard WhatWG streams.",
+  "keywords": [
+    "fetch",
+    "stream",
+    "reader"
+  ],
+  "homepage": "https://github.com/mbostock/path-source",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Mike Bostock",
+    "url": "https://bost.ocks.org/mike"
+  },
+  "browser": "dist/path-source.js",
+  "main": "index.node.js",
+  "module": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mbostock/path-source.git"
+  },
+  "scripts": {
+    "prepublish": "rm -rf dist && mkdir dist && rollup --banner \"$(preamble)\" -f umd -g array-source:sources.array -n sources.path -o dist/path-source.js -- index.js && uglifyjs --preamble \"$(preamble)\" -o dist/path-source.min.js -cm -- dist/path-source.js",
+    "postpublish": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "package-preamble": "0.0",
+    "rollup": "0.34",
+    "uglify-js": "2"
+  },
+  "dependencies": {
+    "array-source": "0.0",
+    "file-source": "0.5"
+  }
+}
