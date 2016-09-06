@@ -44,7 +44,7 @@ read(sources.path("example.txt"))
 
 <a name="path" href="#path">#</a> <b>path</b>(<i>path</i>) [<>](https://github.com/mbostock/path-source/blob/master/index.js "Source")
 
-In Node, returns a *source* for the file at the specified *path*; equivalent to [file-source](https://github.com/mbostock/file-source). In browser, returns a *source* for the resource at the specified *path*, using streaming fetch if available, and falling back to XMLHttpRequest.
+In Node, returns a *source* for the file at the specified *path*; equivalent to [file-source](https://github.com/mbostock/file-source). In browser, returns a *source* for the resource at the specified *path* URL, using [streaming fetch](https://www.chromestatus.com/feature/5804334163951616) if available, and falling back to a [binary data](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Sending_and_Receiving_Binary_Data) [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
 <a name="source_read" href="#source_read">#</a> <i>source</i>.<b>read</b>([<i>length</i>])
 
