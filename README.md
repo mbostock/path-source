@@ -28,7 +28,7 @@ In a browser (requires [array-source](https://github.com/mbostock/array-source) 
 function read(source) {
   return source.read().then((result) => {
     if (result.done) return;
-    process.stdout.write(result.value);
+    console.log(result.value);
     return read(source);
   });
 }
