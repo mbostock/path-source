@@ -21,17 +21,16 @@
     "url": "http://github.com/mbostock/path-source.git"
   },
   "scripts": {
-    "prepublish": "rm -rf dist && mkdir dist && rollup --banner \"$(preamble)\" -f umd -g array-source:sources.array,slice-source:sources.slice -n sources.path -o dist/path-source.js -- index.js && uglifyjs --preamble \"$(preamble)\" -o dist/path-source.min.js -cm -- dist/path-source.js",
+    "prepublish": "rm -rf dist && mkdir dist && rollup --banner \"$(preamble)\" -f umd -g array-source:sources.array -n sources.path -o dist/path-source.js -- index.js && uglifyjs --preamble \"$(preamble)\" -o dist/path-source.min.js -cm -- dist/path-source.js",
     "postpublish": "git push && git push --tags"
+  },
+  "dependencies": {
+    "array-source": "0.0",
+    "file-source": "0.6"
   },
   "devDependencies": {
     "package-preamble": "0.0",
     "rollup": "0.34",
     "uglify-js": "2"
-  },
-  "dependencies": {
-    "array-source": "0.0",
-    "file-source": "0.5",
-    "slice-source": "0.3"
   }
 }
