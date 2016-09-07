@@ -39,9 +39,15 @@ sources.path("README.md")
 
 ## API Reference
 
-<a name="path" href="#path">#</a> <b>path</b>(<i>path</i>) [<>](https://github.com/mbostock/path-source/blob/master/index.js "Source")
+<a name="path" href="#path">#</a> <b>path</b>(<i>path</i>[, <i>options</i>]) [<>](https://github.com/mbostock/path-source/blob/master/index.js "Source")
 
-In Node, returns a Promise that yields a *source* for the file at the specified *path*; equivalent to [file-source](https://github.com/mbostock/file-source#file). In browser, returns a Promise that yields a *source* for the resource at the specified *path* URL, using [streaming fetch](https://www.chromestatus.com/feature/5804334163951616) if available, and falling back to a [binary data](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Sending_and_Receiving_Binary_Data) [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
+In Node, returns a Promise that yields a *source* for the file at the specified *path*; equivalent to [file-source](https://github.com/mbostock/file-source#file). In a browser, returns a Promise that yields a *source* for the resource at the specified *path* URL, using [streaming fetch](https://www.chromestatus.com/feature/5804334163951616) if available, and falling back to a [binary data](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Sending_and_Receiving_Binary_Data) [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
+
+In Node, the following options are supported:
+
+* `highWaterMark` - the stream’s internal buffer size; defaults to 65,536
+
+In a browser, no options are currently supported.
 
 <a name="source_read" href="#source_read">#</a> <i>source</i>.<b>read</b>() [<>](https://github.com/mbostock/stream-source/blob/master/read.js "Source")
 
