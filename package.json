@@ -13,7 +13,8 @@
     "name": "Mike Bostock",
     "url": "https://bost.ocks.org/mike"
   },
-  "browser": "dist/path-source.js",
+  "unpkg": "dist/path-source.js",
+  "jsdelivr": "dist/path-source.js",
   "main": "index.node.js",
   "module": "index.js",
   "repository": {
@@ -21,7 +22,7 @@
     "url": "http://github.com/mbostock/path-source.git"
   },
   "scripts": {
-    "prepublish": "rm -rf dist && mkdir dist && rollup --banner \"$(preamble)\" -f umd -g array-source:sources.array -n sources.path -o dist/path-source.js -- index.js && uglifyjs --preamble \"$(preamble)\" -o dist/path-source.min.js -cm -- dist/path-source.js",
+    "prepublishOnly": "rm -rf dist && mkdir dist && rollup -c --banner \"$(preamble)\" && uglifyjs -b beautify=false,preamble=\"'$(preamble)'\" -o dist/path-source.min.js -c -m -- dist/path-source.js",
     "postpublish": "git push && git push --tags"
   },
   "dependencies": {
@@ -29,8 +30,8 @@
     "file-source": "0.6"
   },
   "devDependencies": {
-    "package-preamble": "0.0",
-    "rollup": "0.34",
-    "uglify-js": "2"
+    "package-preamble": "0.1",
+    "rollup": "0.49",
+    "uglify-js": "3"
   }
 }
