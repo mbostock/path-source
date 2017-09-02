@@ -1,6 +1,6 @@
 {
   "name": "path-source",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Read files in Node, or fetch URLs in browser, as standard WhatWG streams.",
   "keywords": [
     "fetch",
